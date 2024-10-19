@@ -1,0 +1,19 @@
+@keyframes wavyText {
+	0% {
+		transform: translateY(0px);
+	}
+	20% {
+		transform: translateY(-10px);
+	}
+	40%,
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+h1 span {
+	display: inline-block;
+	white-space: pre;
+	animation: wavyText 1.5s ease-in-out 2s infinite;
+	animation-delay: calc(((1.5s / var(--name-length)) * var(--i)) + 2s);
+}

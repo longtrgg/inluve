@@ -1,27 +1,144 @@
-import Image from 'next/image';
-import Banner from '@/assets/banner.png';
-import Cake from '@/assets/cake.gif';
+'use client';
+import { Particles } from 'react-tsparticles';
 
 export default function Birthday() {
 	return (
-		<section className="flex flex-col items-center justify-center bg-purple-200 min-h-screen p-10">
-			<Image src={Banner} alt="" />
-			<div className="max-w-[500px] w-full text-center p-10 bg-white rounded-lg my-10">
-				<div className="w-[100px] h-[100px] rounded-full overflow-hidden mx-auto">
-					<img
-						src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/328265067_1181292129030399_1829062076872195802_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFGwCFzo_pXhF7u8llLCAzTfJm2urzeclV8mba6vN5yVTOP9SQYSh6-a4Pto4-Hjgf73AC_GXrSF-rBV5VtMpZy&_nc_ohc=hLahrrhwhnIQ7kNvgESPXC8&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=Ao3YT3hUWRhPh-XLEePxk4p&oh=00_AYDuBeQjrJnTIFeJV94GFQI5MLgBHfI34JT4WXws7xXS4w&oe=66F00840"
-						alt=""
-					/>
-				</div>
-				<h1 className="font-black text-3xl my-6">Long Truong</h1>
-				<p className="font-semibold text-[#737887]">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit
-					praesentium animi magnam sequi. Veritatis exercitationem
-					necessitatibus, velit aut culpa labore, iusto, odit recusandae soluta
-					sit est quia molestias quis.
-				</p>
-			</div>
-			<Image src={Cake} alt="" className="max-w-[500px] w-full" />
-		</section>
+		<Particles
+			options={{
+				fullScreen: {
+					enable: true,
+					zIndex: 0,
+				},
+				particles: {
+					number: {
+						value: 200,
+						limit: 300,
+						density: {
+							enable: true,
+							value_area: 800,
+						},
+					},
+					color: {
+						value: '#ffffff',
+					},
+					shape: {
+						type: 'circle',
+						stroke: {
+							width: 0,
+							color: '#000000',
+						},
+						polygon: {
+							nb_sides: 5,
+						},
+						image: {
+							src: 'images/github.svg',
+							width: 100,
+							height: 100,
+						},
+					},
+					opacity: {
+						value: 0.5,
+						random: true,
+						anim: {
+							enable: true,
+							speed: 1,
+							opacity_min: 0.5,
+							sync: false,
+						},
+					},
+					size: {
+						value: 30,
+						random: true,
+						anim: {
+							enable: true,
+							speed: 10,
+							size_min: 10,
+							sync: false,
+						},
+					},
+					line_linked: {
+						enable: true,
+						distance: 100,
+						color: '#ffffff',
+						opacity: 1,
+						width: 1,
+					},
+					move: {
+						enable: true,
+						speed: 3,
+						direction: 'none',
+						random: false,
+						straight: false,
+						out_mode: 'out',
+						bounce: false,
+						attract: {
+							enable: false,
+							rotateX: 600,
+							rotateY: 1200,
+						},
+					},
+				},
+				interactivity: {
+					detect_on: 'canvas',
+					events: {
+						onHover: {
+							enable: true,
+							mode: 'bubble',
+							parallax: {
+								enable: false,
+								force: 60,
+								smooth: 10,
+							},
+						},
+						onClick: {
+							enable: true,
+							mode: 'push',
+						},
+						resize: true,
+					},
+					modes: {
+						grab: {
+							distance: 400,
+							lineLinked: {
+								opacity: 1,
+							},
+						},
+						bubble: {
+							distance: 400,
+							size: 100,
+							duration: 2,
+							opacity: 1,
+							speed: 2,
+						},
+						repulse: {
+							distance: 200,
+						},
+						push: {
+							particles_nb: 4,
+						},
+						remove: {
+							particles_nb: 2,
+						},
+					},
+				},
+				backgroundMask: {
+					enable: true,
+					// cover: {
+					// 	color: {
+					// 		value: {
+					// 			r: 0,
+					// 			g: 0,
+					// 			b: 0,
+					// 		},
+					// 	},
+					// },
+				},
+				retina_detect: true,
+				fps_limit: 60,
+				background: {
+					image: "url('https://particles.js.org/images/background3.jpg')",
+				},
+			}}
+		/>
 	);
 }
